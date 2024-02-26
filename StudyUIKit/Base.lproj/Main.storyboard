@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ovX-Zp-yDo">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -333,25 +333,95 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rj-t6-amh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3694" y="390"/>
+            <point key="canvasLocation" x="4620.6106870229005" y="389.43661971830988"/>
         </scene>
-        <!--View Controller-->
+        <!--Canvas View Controller-->
         <scene sceneID="lrz-hb-Kql">
             <objects>
-                <viewController id="7Hh-FD-uch" sceneMemberID="viewController">
+                <viewController id="7Hh-FD-uch" customClass="CanvasViewController" customModule="StudyUIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J0l-VP-Map">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD6-RD-i9w" customClass="DrawningControl" customModule="StudyUIKit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="213" width="393" height="426"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5M-UJ-Tbp">
+                                        <rect key="frame" x="301" y="41" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchPress:" destination="qD6-RD-i9w" eventType="valueChanged" id="OPX-af-orR"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="t5M-UJ-Tbp" secondAttribute="trailing" constant="43" id="v2k-Eh-Vdv"/>
+                                    <constraint firstItem="t5M-UJ-Tbp" firstAttribute="top" secondItem="qD6-RD-i9w" secondAttribute="top" constant="41" id="zmy-aa-6j3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isToggle" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="svitchView" destination="t5M-UJ-Tbp" id="sZE-dc-f8s"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YGz-Ms-OsA"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qD6-RD-i9w" firstAttribute="centerY" secondItem="J0l-VP-Map" secondAttribute="centerY" id="5KR-y5-fF9"/>
+                            <constraint firstItem="qD6-RD-i9w" firstAttribute="width" secondItem="J0l-VP-Map" secondAttribute="width" id="8WU-wP-grf"/>
+                            <constraint firstItem="qD6-RD-i9w" firstAttribute="height" secondItem="J0l-VP-Map" secondAttribute="height" multiplier="0.5" id="brV-kp-J52"/>
+                            <constraint firstItem="qD6-RD-i9w" firstAttribute="centerX" secondItem="J0l-VP-Map" secondAttribute="centerX" id="jg8-Up-pqr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sJf-e5-akR">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="text.insert" catalog="system" id="DJz-rK-w0v"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="text.insert" catalog="system" id="DJz-rK-w0v">
+                            <connections>
+                                <segue destination="CsX-dm-vUo" kind="show" id="paJ-q7-kqb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="drawningContriller" destination="qD6-RD-i9w" id="uhx-2Z-1pT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JoY-Eb-acp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="735"/>
+            <point key="canvasLocation" x="2057.2519083969464" y="734.50704225352115"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="cqs-av-zww">
+            <objects>
+                <viewController id="CsX-dm-vUo" customClass="TestViewController" customModule="StudyUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5eo-s8-Vqa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7F-el-DXm" customClass="TestView" customModule="StudyUIKit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="211" width="393" height="430"/>
+                                <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="430" id="Zw4-Ic-9P9"/>
+                                    <constraint firstAttribute="width" constant="393" id="eMw-PY-bLB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v8r-iu-Lky"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R7F-el-DXm" firstAttribute="centerY" secondItem="5eo-s8-Vqa" secondAttribute="centerY" id="JWg-mx-fcw"/>
+                            <constraint firstItem="R7F-el-DXm" firstAttribute="centerX" secondItem="5eo-s8-Vqa" secondAttribute="centerX" id="YYT-Vf-620"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ick-bg-LJe"/>
+                    <connections>
+                        <outlet property="testView" destination="R7F-el-DXm" id="h7T-0R-gPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGU-z8-TBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063.3587786259541" y="754.92957746478874"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aci-2z-nSR">
@@ -372,21 +442,45 @@
             </objects>
             <point key="canvasLocation" x="1884.7328244274809" y="-2.1126760563380285"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DMw-2G-uqF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ovX-Zp-yDo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nxm-ju-voY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Hh-FD-uch" kind="relationship" relationship="rootViewController" id="zlT-9B-I1A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2C-ZO-rIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130.534351145038" y="734.50704225352115"/>
+        </scene>
     </scenes>
     <resources>
         <image name="eye" width="256" height="256"/>
-        <image name="figure.pool.swim" catalog="system" width="32" height="32"/>
-        <image name="person.and.person.fill" catalog="system" width="32" height="32"/>
-        <image name="text.insert" catalog="system" width="32" height="32"/>
+        <image name="figure.pool.swim" catalog="system" width="128" height="77"/>
+        <image name="person.and.person.fill" catalog="system" width="128" height="86"/>
+        <image name="text.insert" catalog="system" width="128" height="99"/>
         <image name="voodoo" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="underPageBackgroundColor">
+            <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

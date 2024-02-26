@@ -11,6 +11,10 @@
 		306CFD8A2B7BDE2E00A4A26B /* AllCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306CFD892B7BDE2E00A4A26B /* AllCityCell.swift */; };
 		306CFD8C2B7BE07D00A4A26B /* ForecastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306CFD8B2B7BE07D00A4A26B /* ForecastController.swift */; };
 		306CFD8E2B7BE0B100A4A26B /* WeatherViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306CFD8D2B7BE0B100A4A26B /* WeatherViewCell.swift */; };
+		30BF24C12B87384A004E8803 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF24C02B87384A004E8803 /* CanvasViewController.swift */; };
+		30BF24C32B8738F3004E8803 /* DrawningControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF24C22B8738F3004E8803 /* DrawningControl.swift */; };
+		30BF24C52B87A275004E8803 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF24C42B87A275004E8803 /* TestViewController.swift */; };
+		30BF24C72B87A29F004E8803 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF24C62B87A29F004E8803 /* TestView.swift */; };
 		30D8C5292B7A7D4A00B5B384 /* UIViewController +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D8C5282B7A7D4A00B5B384 /* UIViewController +Extension.swift */; };
 		30DD3AB72B724D4800B8BF52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD3AB62B724D4800B8BF52 /* AppDelegate.swift */; };
 		30DD3AB92B724D4800B8BF52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD3AB82B724D4800B8BF52 /* SceneDelegate.swift */; };
@@ -49,6 +53,10 @@
 		306CFD892B7BDE2E00A4A26B /* AllCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCityCell.swift; sourceTree = "<group>"; };
 		306CFD8B2B7BE07D00A4A26B /* ForecastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastController.swift; sourceTree = "<group>"; };
 		306CFD8D2B7BE0B100A4A26B /* WeatherViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewCell.swift; sourceTree = "<group>"; };
+		30BF24C02B87384A004E8803 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		30BF24C22B8738F3004E8803 /* DrawningControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawningControl.swift; sourceTree = "<group>"; };
+		30BF24C42B87A275004E8803 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		30BF24C62B87A29F004E8803 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		30D8C5282B7A7D4A00B5B384 /* UIViewController +Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +Extension.swift"; sourceTree = "<group>"; };
 		30DD3AB32B724D4800B8BF52 /* StudyUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DD3AB62B724D4800B8BF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 				30E651422B7BBC64002CF14D /* FavoriteCityController.swift */,
 				30E651442B7BBCA2002CF14D /* AllCityController.swift */,
 				306CFD8B2B7BE07D00A4A26B /* ForecastController.swift */,
+				30BF24C02B87384A004E8803 /* CanvasViewController.swift */,
+				30BF24C42B87A275004E8803 /* TestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +146,8 @@
 				306CFD8D2B7BE0B100A4A26B /* WeatherViewCell.swift */,
 				30E651462B7BBF56002CF14D /* CityCell.swift */,
 				306CFD892B7BDE2E00A4A26B /* AllCityCell.swift */,
+				30BF24C22B8738F3004E8803 /* DrawningControl.swift */,
+				30BF24C62B87A29F004E8803 /* TestView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -329,10 +341,14 @@
 				30E651452B7BBCA2002CF14D /* AllCityController.swift in Sources */,
 				306CFD8A2B7BDE2E00A4A26B /* AllCityCell.swift in Sources */,
 				306CFD8E2B7BE0B100A4A26B /* WeatherViewCell.swift in Sources */,
+				30BF24C72B87A29F004E8803 /* TestView.swift in Sources */,
+				30BF24C12B87384A004E8803 /* CanvasViewController.swift in Sources */,
+				30BF24C32B8738F3004E8803 /* DrawningControl.swift in Sources */,
 				306CFD862B7BC45700A4A26B /* City.swift in Sources */,
 				30E651472B7BBF56002CF14D /* CityCell.swift in Sources */,
 				306CFD8C2B7BE07D00A4A26B /* ForecastController.swift in Sources */,
 				30DD3ABB2B724D4800B8BF52 /* WeatherViewController.swift in Sources */,
+				30BF24C52B87A275004E8803 /* TestViewController.swift in Sources */,
 				30D8C5292B7A7D4A00B5B384 /* UIViewController +Extension.swift in Sources */,
 				30DD3AB72B724D4800B8BF52 /* AppDelegate.swift in Sources */,
 				30DD3AC12B724D4800B8BF52 /* StudyUIKit.xcdatamodeld in Sources */,
