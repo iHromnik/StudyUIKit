@@ -10,18 +10,22 @@ import UIKit
 class FavoriteCityController: UITableViewController {
 
     var cities: [City] = [
-//        City(image: UIImage(named: "eye"), name: "Moscov"),
-//        City(image: UIImage(named: "eye"),name: "Kyiv"),
+//        City(image: UIImage(named: "axe"), name: "Moscov"),
+//        City(image: UIImage(named: "bat"),name: "Kyiv"),
 //        City(image: UIImage(named: "eye"),name: "London"),
-//        City(image: UIImage(named: "eye"),name: "Minsk"),
-//        City(image: UIImage(named: "eye"),name: "Riga"),
-//        City(image: UIImage(named: "eye"),name: "Vas"),
-//        City(image: UIImage(named: "eye"),name: "Kov")
+//        City(image: UIImage(named: "grave"),name: "Minsk"),
+//        City(image: UIImage(named: "gun"),name: "Riga"),
+//        City(image: UIImage(named: "jason"),name: "Vas"),
+//        City(image: UIImage(named: "skul"),name: "Kov")
     
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: CityXibTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CityXibTableViewCell.identity)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,12 +48,14 @@ class FavoriteCityController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityCell else {
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: CityXibTableViewCell.identity, for: indexPath) as? CityXibTableViewCell else {
             preconditionFailure("Cityes cannot")
         }
+        
+        cell.configure(imageName: cities[indexPath.row].image ?? UIImage(named: "voodoo")!, labelText: cities[indexPath.row].name)
 
-        cell.lableCityCell.text = cities[indexPath.row].name
-        cell.imageCityCell.image = cities[indexPath.row].image
+//        cell.lableCityCell.text = cities[indexPath.row].name
+//        cell.imageCityCell.image = cities[indexPath.row].image
 
         return cell
     }
@@ -67,7 +73,10 @@ class FavoriteCityController: UITableViewController {
             destinationVC.labelText = "someText"
         }
     }
-    
+   
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "To_Forecast", sender: nil)
+    }
     
     @IBAction func addSelectedCity(segue: UIStoryboardSegue) {
         if let sourceVC = segue.source as? AllCityController,

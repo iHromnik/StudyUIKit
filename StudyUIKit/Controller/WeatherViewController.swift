@@ -12,9 +12,13 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var cityImage: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cityImage.image = UIImage(named: "City/eye")
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
